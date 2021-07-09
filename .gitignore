@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/uim-jsondb
+uim-jsondb.so
+uim-jsondb.dylib
+uim-jsondb.dll
+uim-jsondb.a
+uim-jsondb.lib
+uim-jsondb-test-*
+*.exe
+*.o
+*.obj
+*.lst
