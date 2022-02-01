@@ -1,9 +1,9 @@
-module uim.jsondb.hybrid;
+module uim.datasource.hybrid;
 
 @safe:
-import uim.jsondb;
+import uim.datasource;
 
 class DJSNHybridDb : DJSNDb {
-  this() {}
+  this() { super(); }
 }
 auto JSNHybridDb() { return new DJSNHybridDb; }

@@ -1,9 +1,11 @@
-module uim.jsondb.file;
+module uim.datasource.file;
 
 @safe:
-import uim.jsondb;
+import uim.datasource;
 
 class DJSNFileDb : DJSNDb {
-  this() {}
+  this() { super(); }
+  
+  
 }
 auto JSNFileDb() { return new DJSNFileDb; }

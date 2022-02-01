@@ -1,9 +1,9 @@
-module uim.jsondb.mongo;
+module uim.datasource.mongo;
 
 @safe:
-import uim.jsondb;
+import uim.datasource;
 
 class DJSNMongoDb : DJSNDb {
-  this() {}
+  this() { super(); }
 }
 auto JSNMongoDb() { return new DJSNMongoDb; }
