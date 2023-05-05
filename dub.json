@@ -1,12 +1,13 @@
 {
-	"name": "uim-jsondb",
+	"name": "uim-datasource",
 	"authors": [ "UI Manufaktur Team" ],
 	"copyright": "Copyright © 2017-2021, UI Manufaktur UG",
 	"description": "A D library",
-	"license": "MIT",
+	"license": "Apache-2.0",
 	"targetType": "library",
 	"dependencies": {
-		"silly": "~>1.1.1",
+    "colored": "~>0.0.23",
+    "silly": "~>1.1.1",
     "vibe-d": "==0.9.3"
 	},
 	"sourcePaths": [
