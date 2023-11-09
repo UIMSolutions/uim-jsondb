@@ -68,45 +68,45 @@ abstract class DJSNDb {
     return find(collectionName, select, allVersions).length; }
 
   Json[] find(string source, string[] pools, bool allVersions = false) {
-    Json[] results;
-    pools.map!(a => find(source, a, allVersions)).each!(a => results ~= a);
-    return results;
+    return pools
+      .map!(pool => find(source, pool, allVersions))
+      .array;
   }
 
   Json[] find(string[] pools, bool allVersions = false) {
-    Json[] results;
-    pools.map!(a => find(a, allVersions)).each!(a => results ~= a);
-    return results;
+    return pools
+      .map!(pool => find(pool, allVersions))
+      .array;
   }
 
   Json[] find(string source, string[] pools, UUID[] ids, bool allVersions = false) {
-    Json[] results;
-    pools.map!(a => find(source, a, ids, allVersions)).each!(a => results ~= a);
-    return results;
+    return pools
+      .map!(pool => find(source, pool, ids, allVersions))
+      .array
   }
 
   Json[] find(string[] pools, UUID[] ids, bool allVersions = false) {
-    Json[] results;
-    pools.map!(a => find(a, ids, allVersions)).each!(a => results ~= a);
-    return results;
+    return pools
+      .map!(pool => find(pool, ids, allVersions))
+      .array
   }
 
   Json[] find(string source, string[] pools, UUID id, bool allVersions = false) {
-    Json[] results;
-    pools.map!(a => find(source, a, id, allVersions)).each!(a => results ~= a);
-    return results;
+    return pools
+      .map!(a => find(source, a, id, allVersions))
+      .array;
   }
 
   Json[] find(string[] pools, UUID id, bool allVersions = false) {
-    Json[] results;
-    pools.map!(a => find(a, id, allVersions)).each!(a => results ~= a);
-    return results;
+    return pools
+      .map!(pool => find(pool, id, allVersions))
+      .array;
   }
 
   Json[] find(string source, string[] pools, DOOPEntity entity, bool allVersions = false) {
-    Json[] results;
-    foreach(pool; pools) results ~= find(source, pool, entity, allVersions);
-    return results;
+    return pools
+      .map!(pool => find(source, pool, entity, allVersions))
+      .array;
   }
 
   Json[] find(string[] pools, DOOPEntity entity, bool allVersions = false) {
@@ -116,27 +116,27 @@ abstract class DJSNDb {
   }
 
   Json[] find(string source, string[] pools, STRINGAA select, bool allVersions = false) {
-    Json[] results;
-    foreach(pool; pools) results ~= find(pool, select, allVersions);
-    return results;
+    return pools
+      .map!(pool => find(pool, select, allVersions))
+      .array;
   }
 
   Json[] find(string[] collectionNames, STRINGAA select, bool allVersions = false) {
-    Json[] results;
-    foreach(collectionName; collectionNames) results ~= find(collectionName, select, allVersions);
-    return results;
+    return collectionNames
+      .map!(cName => find(cName, select, allVersions))
+      .array;
   }
 
   Json[] find(string source, string[] collectionNames, Json select, bool allVersions = false) {
-    Json[] results;
-    foreach(collectionName; collectionNames) results ~= find(source, collectionName, select, allVersions);
-    return results;
+    return collectionNames
+      .map!(cName => find(source, cName, select, allVersions))
+      .array;
   }
 
   Json[] find(string[] collectionNames, Json select, bool allVersions = false) {
-    Json[] results;
-    foreach(collectionName; collectionNames) results ~= find(collectionName, select, allVersions);
-    return results;
+    return collectionNames
+      .map!(cName => find(cName, select, allVersions))
+      .array
   }
 
   // Search pool
